@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "build:gh": "parcel build index.html --public-url /qazaqsha-soyle/"
   },
   "devDependencies": {
     "parcel": "^2.14.0",
