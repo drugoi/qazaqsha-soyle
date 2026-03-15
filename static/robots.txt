@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drugoi.github.io/qazaqsha-soyle/sitemap.xml

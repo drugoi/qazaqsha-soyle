@@ -4,10 +4,13 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "build:gh": "parcel build index.html --public-url /qazaqsha-soyle/"
+    "build:gh": "parcel build index.html --public-url /qazaqsha-soyle/ && cp static/robots.txt static/sitemap.xml dist/"
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.16.4",
+    "@parcel/transformer-jsonld": "^2.16.4",
     "parcel": "^2.14.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "tailwindcss": "^3.4.15"
   }
 }
