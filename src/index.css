@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-[#1a2524] antialiased;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    min-height: 100dvh;
+    min-height: 100vh;
+    background: linear-gradient(165deg, #faf9f7 0%, #f3f2f0 50%, #eeedeb 100%);
+  }
+
+  ::selection {
+    background-color: rgba(50, 136, 130, 0.2);
+    color: #1a2524;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    input {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+@layer components {
+  .app-card {
+    @apply rounded-3xl overflow-hidden border border-[#e0e3e2];
+    box-shadow: 0 4px 24px rgba(15, 38, 37, 0.08), 0 1px 3px rgba(15, 38, 37, 0.04);
+  }
+
+  .chunk-card {
+    @apply flex flex-col items-center justify-center rounded-xl border min-w-[80px] sm:min-w-[96px] flex-none py-3 px-3 sm:py-3.5 sm:px-4;
+    border-color: rgba(178, 221, 217, 0.7);
+    background: linear-gradient(180deg, #f0faf9 0%, #e8f5f4 100%);
+    box-shadow: 0 1px 3px rgba(15, 38, 37, 0.04);
+  }
+
+  @media (hover: hover) {
+    .chunk-card:hover {
+      box-shadow: 0 4px 12px rgba(15, 38, 37, 0.08);
+      border-color: rgba(178, 221, 217, 1);
+    }
+  }
+
+  .chunks-grid {
+    @apply flex flex-wrap gap-2.5 sm:gap-3 items-stretch;
+  }
+
+  .btn-touch {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .copy-btn-base {
+    @apply flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 min-h-[48px] px-5 py-3;
+  }
+
+  .result-block {
+    border-left: 3px solid #338882;
+    box-shadow: 0 1px 4px rgba(15, 38, 37, 0.04);
+  }
+}
+

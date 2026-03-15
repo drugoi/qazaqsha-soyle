@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#265a57">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Қазақша сөйле</title>
+    <link rel="stylesheet" href="./src/index.css">
+</head>
+<body class="min-h-screen bg-surface-warm p-4 sm:p-6 md:p-8 flex items-center justify-center">
+
+    <div class="app-card max-w-2xl w-full bg-surface-card">
+        <header class="bg-primary-600 px-5 py-6 sm:px-8 sm:py-8 text-white relative overflow-hidden" style="background: linear-gradient(180deg, #2a6f6a 0%, #265a57 100%);">
+            <div class="flex items-center gap-3 mb-2">
+                <svg class="w-9 h-9 text-primary-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="4" y1="9" x2="20" y2="9"></line>
+                    <line x1="4" y1="15" x2="20" y2="15"></line>
+                    <line x1="10" y1="3" x2="8" y2="21"></line>
+                    <line x1="16" y1="3" x2="14" y2="21"></line>
+                </svg>
+                <h1 class="font-display text-2xl sm:text-3xl font-bold tracking-tight">Қазақша сөйле</h1>
+            </div>
+            <p class="text-primary-100 text-sm sm:text-base max-w-md leading-relaxed">
+                Введите число или код — покажем, как произнести по-казахски.
+            </p>
+        </header>
+
+        <main class="p-5 sm:p-8">
+            <div class="relative mb-6 sm:mb-8">
+                <label for="code-input" class="block font-display text-sm font-semibold text-primary-800 mb-2">
+                    Число или код
+                </label>
+                <div class="relative">
+                    <input
+                        id="code-input"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        placeholder="Например: 1001, 4590 или номер карты"
+                        class="w-full text-xl sm:text-2xl font-mono tracking-[0.2em] text-primary-900 bg-primary-50/60 border-2 border-primary-200 rounded-2xl py-4 sm:py-5 pl-4 pr-[52px] focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/20 transition-all placeholder:text-primary-300"
+                    />
+                    <button
+                        id="clear-btn"
+                        type="button"
+                        class="btn-touch hidden absolute right-2 top-1/2 -translate-y-1/2 p-2.5 text-primary-400 hover:text-primary-600 hover:bg-primary-200/60 active:bg-primary-200 rounded-full transition-colors touch-manipulation"
+                        title="Очистить"
+                        aria-label="Очистить поле"
+                    >
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-6 min-h-[120px] sm:min-h-[100px]" id="chunks-container">
+                <div class="h-full flex flex-col items-center justify-center text-primary-400 border-2 border-dashed border-primary-200 rounded-2xl py-8 px-4" id="empty-state">
+                    <svg class="w-9 h-9 mb-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                    <p class="text-sm sm:text-base text-center max-w-[260px]">Введите цифры — появятся подсказки по произношению</p>
+                </div>
+                <div class="hidden chunks-grid" id="tags-grid"></div>
+            </div>
+
+            <div id="result-container" class="result-block hidden bg-primary-50/70 border border-primary-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between mt-1">
+                <div class="flex-1 min-w-0">
+                    <span class="font-display text-xs font-bold text-primary-600 uppercase tracking-wider block mb-1.5">
+                        Как сказать по-казахски
+                    </span>
+                    <p id="result-text" class="text-base sm:text-lg text-primary-900 font-semibold leading-snug break-words"></p>
+                    <p id="transcription-text" class="text-sm sm:text-base text-primary-600 italic mt-1.5 leading-relaxed break-words"></p>
+                </div>
+                <button
+                    id="copy-btn"
+                    type="button"
+                    class="copy-btn-base flex-shrink-0 w-full sm:w-auto bg-surface-card text-primary-800 border-2 border-primary-200 hover:bg-primary-50 hover:border-primary-300 active:scale-[0.98] shadow-sm touch-manipulation"
+                >
+                    <span id="copy-icon" aria-hidden="true"></span>
+                    <span id="copy-text">Копировать</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
