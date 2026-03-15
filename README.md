@@ -11,8 +11,6 @@ npm start
 
 ## Deploy (GitHub Pages)
 
-The site is built and deployed automatically on every push to `main` via GitHub Actions.
+Each push to `main` builds and deploys via GitHub Actions. Set **Settings → Pages → Source** to **GitHub Actions** if needed. Live: https://drugoi.github.io/qazaqsha-soyle/
 
-**One-time setup:** In the repo **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**. After that, each push to `main` will build and publish to https://drugoi.github.io/qazaqsha-soyle/
-
-To build locally with the correct base path: `npm run build:gh`
+Local build for that base path: `npm run build:gh`
